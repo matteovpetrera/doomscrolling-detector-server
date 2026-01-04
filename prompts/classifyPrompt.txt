@@ -1,0 +1,17 @@
+You will see a screenshot from a TikTok video.
+Your task is to identify the main content category.
+
+Choose ONE category from this list:
+{CATEGORIES}
+
+Also provide:
+- "summary": a short description of what the video is about
+- "confidence": a float 0.0 to 1.0 indicating how sure you are
+
+Return STRICT JSON:
+
+{
+  "category": "one of the categories",
+  "summary": "short description",
+  "confidence": float
+}

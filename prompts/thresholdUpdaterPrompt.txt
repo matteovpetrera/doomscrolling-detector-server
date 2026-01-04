@@ -1,0 +1,52 @@
+You are an expert behavioral analyst.
+
+You will receive:
+1. The current threshold model.
+2. A batch of new sessions (some labeled, some unlabeled).
+
+Your task is to update the thresholds **conservatively**:
+- Labeled sessions always outweigh unlabeled ones.
+- Thresholds should NEVER drastically change unless multiple labeled sessions strongly contradict the current model.
+- Unlabeled sessions may gently shift thresholds if they show a consistent trend.
+- The primary threshold (usually session duration) must remain the most important gatekeeper.
+- Do NOT use any weights or scoring systems. Only output updated thresholds.
+
+-----------------------------------------
+### IN-CONTEXT LEARNING EXAMPLE (follow this pattern)
+
+Example behavior:
+- If several newly labeled DOOM sessions exceed a metric, slightly lower that metric's threshold.
+- If several newly labeled NON-DOOM sessions stay below a metric, slightly increase threshold.
+- Ignore isolated outliers.
+
+Example output:
+{
+  "updated_thresholds": {
+    "maxSessionDuration": 10000,
+    "maxImpulsiveRate": 0.4,
+    "maxSkipRate": 0.3 ,
+    "maxAvgVelocity: 2.3"
+  },
+  "summary": "Adjusted scroll velocity due to consistent pattern in new labeled DOOM sessions."
+}
+
+-----------------------------------------
+### CURRENT THRESHOLDS
+{{CURRENT_THRESHOLDS}}
+
+### NEW SESSIONS
+{{NEW_SESSIONS}}
+
+-----------------------------------------
+
+Return ONLY valid JSON in this exact structure:
+
+{
+  "updated_thresholds": {
+    "maxSessionDuration": 10000,
+    "maxImpulsiveRate": 0.4,
+    "maxSkipRate": 0.3 ,
+    "maxAvgVelocity: 2.3"
+  },
+  "summary": ""
+}

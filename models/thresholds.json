@@ -1,0 +1,8 @@
+{
+  "minSessionDuration": 15,
+  "minImpulsiveScrollRate": 0.6,
+  "minContentSkippedRate": 0.7,
+  "maxInteractionRate": 0.02,
+  "maxDepthOfEngagement": 0.3,
+  "maxAvgWatchTime": 3500
+}
