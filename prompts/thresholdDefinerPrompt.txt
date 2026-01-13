@@ -33,6 +33,8 @@ Example output format:
   "notes": "The primary signal is session duration; secondary metrics reinforce detection."
 }
 
+IMPORTANT: Produce EVERY threshold in the output format example
+
 -----------------------------------------
 ### DATASET TO ANALYZE
 {{DATASET}}
@@ -58,3 +60,5 @@ Return ONLY valid JSON in this exact structure:
   },
   "notes": ""
 }
+
+IMPORTANT: Produce EVERY threshold in the output format example
