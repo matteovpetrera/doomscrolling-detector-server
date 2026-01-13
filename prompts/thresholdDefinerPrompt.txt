@@ -21,7 +21,6 @@ Example reasoning:
 
 Example output format:
 {
-  "thresholds": {
     "minSessionDuration": 12,
     "minImpulsiveScrollRate": 0.4,
     "minContentSkippedRate": 0.3,
@@ -29,8 +28,6 @@ Example output format:
     "maxInteractionRate": 0.5,
     "minAvgScrollVelocity": 2.3,
     "maxAvgWatchTime": 1
-  },
-  "notes": "The primary signal is session duration; secondary metrics reinforce detection."
 }
 
 IMPORTANT: Produce EVERY threshold in the output format example
@@ -49,7 +46,6 @@ Analyze the dataset and output:
 Return ONLY valid JSON in this exact structure:
 
 {
-  "thresholds": {
     "minSessionDuration": 12,
     "minImpulsiveScrollRate": 0.4,
     "minContentSkippedRate": 0.3,
@@ -57,8 +53,6 @@ Return ONLY valid JSON in this exact structure:
     "maxInteractionRate": 0.5,
     "minAvgScrollVelocity": 2.3,
     "maxAvgWatchTime": 1
-  },
-  "notes": ""
 }
 
 IMPORTANT: Produce EVERY threshold in the output format example
