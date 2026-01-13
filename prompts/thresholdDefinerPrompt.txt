@@ -22,10 +22,13 @@ Example reasoning:
 Example output format:
 {
   "thresholds": {
-    "maxSessionDuration": 10000,
-    "maxImpulsiveRate": 0.4,
-    "maxSkipRate": 0.3 ,
-    "maxAvgVelocity: 2.3"
+    "minSessionDuration": 12,
+    "minImpulsiveScrollRate": 0.4,
+    "minContentSkippedRate": 0.3,
+    "maxDepthOfEngagement": 0.1,
+    "maxInteractionRate": 0.5,
+    "minAvgScrollVelocity": 2.3,
+    "maxAvgWatchTime": 1
   },
   "notes": "The primary signal is session duration; secondary metrics reinforce detection."
 }
@@ -45,10 +48,13 @@ Return ONLY valid JSON in this exact structure:
 
 {
   "thresholds": {
-    "maxSessionDuration": 10000,
-    "maxImpulsiveRate": 0.4,
-    "maxSkipRate": 0.3 ,
-    "maxAvgVelocity: 2.3"
+    "minSessionDuration": 12,
+    "minImpulsiveScrollRate": 0.4,
+    "minContentSkippedRate": 0.3,
+    "maxDepthOfEngagement": 0.1,
+    "maxInteractionRate": 0.5,
+    "minAvgScrollVelocity": 2.3,
+    "maxAvgWatchTime": 1
   },
   "notes": ""
 }
