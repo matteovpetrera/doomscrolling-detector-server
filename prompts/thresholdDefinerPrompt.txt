@@ -41,7 +41,6 @@ IMPORTANT: Produce EVERY threshold in the output format example
 ### YOUR TASK
 Analyze the dataset and output:
 1. A set of personalized numeric thresholds for doomscrolling detection.
-2. A short explanatory note summarizing how these thresholds were derived.
 
 Return ONLY valid JSON in this exact structure:
 
