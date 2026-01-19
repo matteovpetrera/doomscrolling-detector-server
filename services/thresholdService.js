@@ -14,13 +14,16 @@ export async function computeInitialThresholds(datasetJson) {
   }
 
   const prompt = buildPrompt("thresholdDefinerPrompt.txt", {
-    DATASET: JSON.stringify(datasetJson.sessions, null, 2)
+    DATASET: JSON.stringify(datasetJson.sessions, null, 2),
   });
 
-  console.log("🔥 PROMPT INVIATO ALL'LLM:\n");
+  console.log("PROMPT INVIATO ALL'LLM:\n");
+  console.log(prompt);
 
   const llmOutput = await askLLM(prompt);
   const parsed = JSON.parse(llmOutput);
+
+  console.log("RISPOSTA DELL'LLM:\n", JSON.stringify(parsed, null, 2));
 
   fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed.thresholds, null, 2));
 
@@ -35,24 +38,21 @@ export async function updateThresholds(newSessionsJson) {
     throw new Error("❌ updateThresholds: newSessionsJson.sessions is undefined");
   }
 
-  const currentThresholds = JSON.parse(
-    fs.readFileSync(THRESHOLDS_PATH, "utf8")
-  );
+  const currentThresholds = JSON.parse(fs.readFileSync(THRESHOLDS_PATH, "utf8"));
 
   const prompt = buildPrompt("thresholdUpdaterPrompt.txt", {
     CURRENT_THRESHOLDS: JSON.stringify(currentThresholds, null, 2),
-    NEW_SESSIONS: JSON.stringify(newSessionsJson.sessions, null, 2)
+    NEW_SESSIONS: JSON.stringify(newSessionsJson.sessions, null, 2),
   });
 
-  console.log("🔥 PROMPT UPDATE INVIATO ALL'LLM:\n", prompt);
+  console.log("PROMPT UPDATE INVIATO ALL'LLM:\n", prompt);
 
   const llmOutput = await askLLM(prompt);
   const parsed = JSON.parse(llmOutput);
 
-  fs.writeFileSync(
-    THRESHOLDS_PATH,
-    JSON.stringify(parsed.updated_thresholds, null, 2)
-  );
+  fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed.updated_thresholds, null, 2));
+
+  console.log("RISPOSTA DELL'LLM:\n", JSON.stringify(parsed, null, 2));
 
   return parsed;
 }
