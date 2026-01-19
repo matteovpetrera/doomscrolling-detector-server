@@ -58,7 +58,7 @@ export async function computeInitialThresholds(datasetJson) {
   console.log("RISPOSTA DELL'LLM not parsed:\n", llmOutput);
   console.log("RISPOSTA DELL'LLM parsed:\n", parsed);
 
-  fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed.thresholds, null, 2));
+  fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed, null, 2));
 
   return parsed;
 }
@@ -83,7 +83,7 @@ export async function updateThresholds(newSessionsJson) {
   const llmOutput = await askLLM(prompt);
   const parsed = safeJsonParseFromLLM(llmOutput);
 
-  fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed.updated_thresholds, null, 2));
+  fs.writeFileSync(THRESHOLDS_PATH, JSON.stringify(parsed, null, 2));
 
   console.log("RISPOSTA DELL'LLM not parsed:\n", llmOutput);
   console.log("RISPOSTA DELL'LLM parsed:\n", parsed);
