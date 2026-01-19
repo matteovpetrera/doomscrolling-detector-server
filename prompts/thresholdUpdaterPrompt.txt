@@ -21,14 +21,15 @@ Example behavior:
 
 Example output:
 {
-  "updated_thresholds": {
-    "maxSessionDuration": 10000,
-    "maxImpulsiveRate": 0.4,
-    "maxSkipRate": 0.3 ,
-    "maxAvgVelocity: 2.3"
-  },
-  "summary": "Adjusted scroll velocity due to consistent pattern in new labeled DOOM sessions."
+    "minSessionDuration": 12,
+    "minImpulsiveScrollRate": 0.4,
+    "minContentSkippedRate": 0.3,
+    "maxDepthOfEngagement": 0.1,
+    "maxInteractionRate": 0.5,
+    "minAvgScrollVelocity": 2.3,
+    "maxAvgWatchTime": 1
 }
+IMPORTAT: Return EVERY threshold in the example, even without changes from the the previous ones
 
 -----------------------------------------
 ### CURRENT THRESHOLDS
@@ -40,13 +41,13 @@ Example output:
 -----------------------------------------
 
 Return ONLY valid JSON in this exact structure:
-
 {
-  "updated_thresholds": {
-    "maxSessionDuration": 10000,
-    "maxImpulsiveRate": 0.4,
-    "maxSkipRate": 0.3 ,
-    "maxAvgVelocity: 2.3"
-  },
-  "summary": ""
+    "minSessionDuration": 12,
+    "minImpulsiveScrollRate": 0.4,
+    "minContentSkippedRate": 0.3,
+    "maxDepthOfEngagement": 0.1,
+    "maxInteractionRate": 0.5,
+    "minAvgScrollVelocity": 2.3,
+    "maxAvgWatchTime": 1
 }
+IMPORTAT: Return EVERY threshold in the example, even without changes from the the previous ones
