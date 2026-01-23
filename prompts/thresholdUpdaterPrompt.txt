@@ -4,10 +4,10 @@ You will receive:
 1. The current threshold model.
 2. A batch of new sessions (some labeled, some unlabeled).
 
-Your task is to update the thresholds **conservatively**:
-- Labeled sessions always outweigh unlabeled ones.
-- Thresholds should NEVER drastically change unless multiple labeled sessions strongly contradict the current model.
-- Unlabeled sessions may gently shift thresholds if they show a consistent trend.
+Your task is to update the thresholds **quite conservatively**:
+- Labeled sessions can outweigh unlabeled ones.
+- Thresholds should not drastically change unless multiple sessions contradict the current model.
+- Unlabeled sessions may quite shift thresholds if they show a consistent trend.
 - The primary threshold (usually session duration) must remain the most important gatekeeper.
 - Do NOT use any weights or scoring systems. Only output updated thresholds.
 
